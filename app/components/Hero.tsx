@@ -1,7 +1,20 @@
 "use client";
+
 import React from "react";
 import { FaFilePdf } from "react-icons/fa";
+
 const Hero: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -19,11 +32,13 @@ const Hero: React.FC = () => {
 
       {/* Short tagline */}
       <p className="text-gray-400 mb-8 max-w-lg">
-        I create modern, responsive, and user-friendly web applications using React and Next.js.
+        I create modern, responsive, and user-friendly web applications using
+        React and Next.js.
       </p>
 
       {/* Action buttons */}
       <div className="flex gap-4 flex-wrap justify-center z-10">
+        {/* Download CV */}
         <a
           href="/files/MHD-Rabie-Al-Ghabra-CV.pdf"
           download
@@ -32,22 +47,33 @@ const Hero: React.FC = () => {
           <FaFilePdf className="text-xl" />
           Download CV
         </a>
-        <a
-          href="#projects"
+
+        {/* View Projects */}
+        <button
+          type="button"
+          onClick={() => scrollToSection("projects")}
           className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
         >
           View Projects
-        </a>
-        <a
-          href="#contact"
+        </button>
+
+        {/* Contact Me */}
+        <button
+          type="button"
+          onClick={() => scrollToSection("contact")}
           className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition font-semibold"
         >
           Contact Me
-        </a>
+        </button>
       </div>
+
+      {/* Decorative circles */}
       <div className="absolute -top-12.5 -left-12.5 w-64 h-64 bg-blue-800 rounded-full opacity-10 pointer-events-none"></div>
+
       <div className="absolute -bottom-15 -right-15 w-72 h-72 bg-green-700 rounded-full opacity-10 pointer-events-none"></div>
     </section>
   );
 };
+
 export default Hero;
+
