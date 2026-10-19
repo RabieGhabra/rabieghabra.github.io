@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
         {/* Email */}
         <button
           onClick={handleEmailClick}
-          className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 text-lg"
+          className="cursor-pointer px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 text-lg"
         >
           <Mail size={20} />
           Send Email
