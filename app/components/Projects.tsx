@@ -126,7 +126,7 @@ return (
                         [project.title]: group,
                       }))
                     }
-                    className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                    className={`cursor-pointer rounded-lg px-3 py-2 text-sm font-medium transition ${
                       activeTab === group
                         ? "bg-blue-600 text-white"
                         : "bg-gray-700 text-gray-300 hover:bg-gray-600"
@@ -215,7 +215,7 @@ return (
                             [project.title]: group,
                           }))
                         }
-                        className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                        className={`cursor-pointer rounded-lg px-3 py-2 text-sm font-medium transition ${
                           activeTab === group
                             ? "bg-blue-600 text-white"
                             : "bg-gray-700 text-gray-300 hover:bg-gray-600"
